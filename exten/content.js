@@ -7,16 +7,13 @@
 
 async function sendtodb(timestamp, prompt, mood, score) {
 	console.log(timestamp, prompt, mood, score)
-	const response = await chrome.runtime.sendMessage({timestamp: timestamp, prompt:prompt, mood:mood, score:score});
-	console.log(response);
+	const response = await chrome.runtime.sendMessage({type:"forbackground", timestamp: timestamp, prompt:prompt, mood:mood, score:score});
 }
-
 
 var data = '';
 document.addEventListener('keydown', (event)=> { 
-	
 	//console.log(event.key.length)
-	if ((event.key=="." || event.key=="?")&& data.length>50){
+	if ((event.key=="." || event.key=="?")){
 		const d = new Date()
 		const time = d.getTime()
 		console.log(data, time)
@@ -50,19 +47,6 @@ async function query(data) {
 	return result;
 }
 
-function updateTable(data) {
-    if (data) {
-        document.getElementById("field1").textContent = data.field1;
-        document.getElementById("field2").textContent = data.field2;
-        document.getElementById("field3").textContent = data.field3;
-    }
-}
-
-chrome.runtime.sendMessage({ action: "get_data" }, function (response) {
-    if (response.data) {
-        updateTable(response.data);
-    }
-});
 
 
 

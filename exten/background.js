@@ -20,7 +20,7 @@ const dbRef = ref(getDatabase());
 
 
 function getdata(){
-	get(child(dbRef, `data/${username}`)).then((snapshot) => {
+	get(child(dbRef, `data`)).then((snapshot) => {
 		if (snapshot.exists()) {
 			return snapshot.val()
 		}

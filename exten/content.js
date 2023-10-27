@@ -16,7 +16,7 @@ var data = '';
 document.addEventListener('keydown', (event)=> { 
 	
 	//console.log(event.key.length)
-	if (event.key=="." || event.key=="?"){
+	if ((event.key=="." || event.key=="?")&& data.length>50){
 		const d = new Date()
 		const time = d.getTime()
 		console.log(data, time)

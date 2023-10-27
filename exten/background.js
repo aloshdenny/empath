@@ -28,6 +28,7 @@ function getdata(){
 }
 
 
+
 function adddata(timestamp, prompt, mood, score){
     console.log(timestamp, prompt, mood, score)
 	set(ref(db, "data/"+timestamp), {
@@ -49,3 +50,23 @@ chrome.runtime.onMessage.addListener(
         sendResponse({farewell: "goodbye"});
     }
   );
+
+
+
+
+
+
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+  if (request.action === "get_data") {
+      getdata().then((data) => {
+          sendResponse({ data: data });
+      });
+      return true; 
+  }
+});
+
+chrome.action.onClicked.addListener(function () {
+  chrome.tabs.create({ url: "dashboard.html" });
+});
+
+

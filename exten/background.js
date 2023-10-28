@@ -21,15 +21,11 @@ const dbRef = ref(getDatabase());
 
 function getdata(){
 	get(child(dbRef, `data`)).then((snapshot) => {
-    if (snapshot.exists()) {
-      console.log(snapshot.val());
-    } else {
-      console.log("No data available");
-    }
-  }).catch((error) => {
-    console.error(error);
-  });
-}  
+		if (snapshot.exists()) {
+			return snapshot.val()
+		}
+	})
+}
 
 
 
@@ -41,10 +37,19 @@ function adddata(timestamp, prompt, mood, score){
 		score: score,
     cluster:""
 	});
+    sendtopopup()   
 }
 
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
+        if (request.type == "forbackground"){
+            console.log(sender.tab ?"from a content script:" + sender.tab.url : "from the extension");
+      
+            adddata(request.timestamp,request.prompt, request.mood, request.score)
+            if (request.greeting === "hello")
+                sendResponse({farewell: "goodbye"});
+        }
+      
       console.log(sender.tab ?
                   "from a content script:" + sender.tab.url :
                   "from the extension");

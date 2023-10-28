@@ -1,12 +1,12 @@
 ## Empath
 
-Empath is a browser extension designed to help users track their mood over time. By simply writing about their day, the extension utilizes advanced natural language processing techniques to analyze the sentiment of their entries. The AI then provides insightful visual feedback, allowing users to observe their mood trends over days, weeks, or months.
+Empath is a browser extension designed to help users track their moods over time. By simply writing about their day, the extension utilizes advanced natural language processing techniques to analyze the sentiment of their entries. The AI then provides insightful visual feedback, allowing users to observe their mood trends over days, weeks, or months.
 
 ## Features
 
 Mood Analysis: The user could track their moods through journaling. Empath employs Natural Language Processing (NLP) techniques, leveraging the Hugging Face model Roberta, to analyze the sentiment of user entries.
 
-Mood Visualization: Empath provides a dashboard for the users to gain a deeper understanding of their emotional well-being. It provides visual feedback to represent the user's mood trends over specific time periods. The graphs will show the top 3 behaviour of the user over specific time periods, from the input collected from the user's journals. And every time when the extension is being accessed, the dashboard page will get refreshed, so the user would get a broader understanding of their behaviour patterns.
+Mood Visualization: Empath provides a dashboard for the users to gain a deeper understanding of their emotional well-being. It provides visual feedback to represent the user's mood trends over specific time periods. The graphs will show the top 3 behaviors of the user over specific time periods, from the input collected from the user's journals. And every time when the extension is accessed, the dashboard page will get refreshed, so the user will get a broader understanding of their behavior patterns.
 
 ## Tools Used
 
@@ -32,11 +32,10 @@ It also provides a number of plugins that can be used to add additional function
 
 Empath is a browser extension. So, to add this to your browser, follow these steps;
 
-First, go to the repository of "Empath"
-Then, clone the "exten" repository.
-Then, head on to the extensions webstore in your browser settings.
-Switch the "Developer mode" option on and click on the option saying "Load Unpacked".
-Then you will be directed to your file explorer to select the folder.
-Select the folder saying "exten".
-Then the extension will be added on to your browser.
+1. First, go to the repository of "Empath"
+2. Clone the "exten" repository.
+3. Then, head on to the "Extensions Webstore" in your browser settings.
+4. Switch the "Developer mode" option on and click on the option saying "Load Unpacked".
+5. You will be directed to your file explorer to select the folder.
+6. Select the folder saying "exten". Then the extension will be added to your browser.
     

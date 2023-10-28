@@ -1,6 +1,6 @@
 ## Empath
 
-Empath is a browser extension designed to help users track their moods over time. By simply using their keyboard, the extension utilizes advanced natural language processing techniques to analyze the sentiment of their entries. The AI then provides insightful visual feedback, allowing users to observe their mood trends over days, weeks, or months. As it is a web extension, it is not restricted to a single webpage. It can analyse your conversations on all websites like your conversations on WhatsApp, Messenger and comments on INstagram, Youtube etc. The prototype does not have proper encryption and security measures implemented yet
+Empath is a browser extension designed to help users track their moods over time. By simply using their keyboard, the extension utilizes advanced natural language processing techniques to analyze the sentiment of their entries. The AI then provides insightful visual feedback, allowing users to observe their mood trends over days, weeks, or months. As it is a web extension, **it is not restricted to a single webpage.** It can analyse your conversations on all websites like your conversations on WhatsApp, Messenger and comments on INstagram, Youtube etc. The prototype does not have proper encryption and security measures implemented yet
 
 ## Features
 

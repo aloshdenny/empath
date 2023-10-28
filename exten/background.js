@@ -23,7 +23,7 @@ function sendtopopup(){
     get(child(dbRef, `data`)).then((snapshot) => {
 		if (snapshot.exists()) {
             let data = snapshot.val()
-            const latest = 50
+            const latest = 6
             const objectKeys = Object.keys(data);
             data = objectKeys.slice(-latest).reduce((result, key) => {
             result[key] = data[key];

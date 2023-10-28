@@ -35,12 +35,14 @@ We plan to integrate a fine-tuned version of the HuggingFace Audio2Vec speech mo
 Empath is a browser extension. So, to add this to your browser, follow these steps;
 
 1. Clone the  repository.
-3. Then, head on to the "Extensions Webstore" in your browser settings.
-4. Switch the "Developer mode" option on and click on the option saying "Load Unpacked".
-5. You will be directed to your file explorer. Select the 'exten' folder inside 'Empath'.
-6. The extension will be successfully added to your browser.
-7. Pin the extension to your browser toolbar.
-8. Click on the pinned extension to view your mood.
-9. Wait 20 seconds as the model loads. (This is a one time process)
-10. Type in a few complete sentences (ending in '.' or '?') in any website of your choice and watch as the popup displays your recent most common emotions.
-11. [Click here](https://www.onlinewordpad.com/) to go to a wordpad webpage to test it out.
+(For FireFox)
+2. Go to the extensions page in your respective browser. 
+3. Switch the "Developer mode" option on (if needed) and click on "Load Unpacked".
+4. You will be directed to your file explorer. Select the 'exten' folder inside 'Empath'.
+5. The extension will be successfully added to your browser.
+6. Pin the extension to your browser toolbar.
+7. Click on the pinned extension to view your mood.
+8. Wait 20 seconds as the model loads. (This is a one time process)
+9. Go to any website of your choice. [Click here](https://www.onlinewordpad.com/) to go to a sample wordpad webpage to test it out.
+10. Type in a few complete sentences (ending in '.' or '?') and watch as the popup displays your recent most common emotions.
+

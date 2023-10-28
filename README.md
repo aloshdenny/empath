@@ -1,6 +1,6 @@
 ## Empath
 
-Empath is a browser extension designed to help users track their moods over time. By simply writing about their day, the extension utilizes advanced natural language processing techniques to analyze the sentiment of their entries. The AI then provides insightful visual feedback, allowing users to observe their mood trends over days, weeks, or months.
+Empath is a browser extension designed to help users track their moods over time. By simply using their keyboard, the extension utilizes advanced natural language processing techniques to analyze the sentiment of their entries. The AI then provides insightful visual feedback, allowing users to observe their mood trends over days, weeks, or months. As it is a web extension, it is not restricted to a single webpage. It can analyse your conversations on all websites like your conversations on WhatsApp, Messenger and comments on INstagram, Youtube etc. The prototype does not have proper encryption and security measures implemented yet
 
 ## Features
 
@@ -43,4 +43,5 @@ Empath is a browser extension. So, to add this to your browser, follow these ste
 7. Pin the extension to your browser toolbar.
 8. Click on the pinned extension to view your mood.
 9. Wait 20 seconds as the model loads. (This is a one time process)
-10. Type in a few complete sentences (ending in '.' or '?') in any website of your choice and watch as the popup displays your recent and common emotions.     
+10. Type in a few complete sentences (ending in '.' or '?') in any website of your choice and watch as the popup displays your recent most common emotions.
+11. [Click here](https://www.onlinewordpad.com/) to go to a wordpad webpage to test it out.

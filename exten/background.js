@@ -21,11 +21,15 @@ const dbRef = ref(getDatabase());
 
 function getdata(){
 	get(child(dbRef, `data`)).then((snapshot) => {
-		if (snapshot.exists()) {
-			return snapshot.val()
-		}
-	})
-}
+    if (snapshot.exists()) {
+      console.log(snapshot.val());
+    } else {
+      console.log("No data available");
+    }
+  }).catch((error) => {
+    console.error(error);
+  });
+}  
 
 
 
@@ -35,7 +39,7 @@ function adddata(timestamp, prompt, mood, score){
 		prompt: prompt,
 		mood: mood,
 		score: score,
-        cluster:""
+    cluster:""
 	});
 }
 
@@ -46,6 +50,7 @@ chrome.runtime.onMessage.addListener(
                   "from the extension");
         
         adddata(request.timestamp,request.prompt, request.mood, request.score)
+        senddatatopopup()
       if (request.greeting === "hello")
         sendResponse({farewell: "goodbye"});
     }
@@ -53,7 +58,11 @@ chrome.runtime.onMessage.addListener(
 
 
 
-
+function senddatatopopup() {
+  latest = getdata()
+  console.log(latest)
+  chrome.runtime.sendMessage({timestamp: timestamp, prompt:prompt, mood:mood, score:score});
+}
 
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
@@ -65,8 +74,13 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   }
 });
 
-chrome.action.onClicked.addListener(function () {
-  chrome.tabs.create({ url: "dashboard.html" });
-});
+
+function updateTable(data) {
+  if (data) {
+      document.getElementById("field1").textContent = data[Object.keys(data)[0]];
+     }
+}
+console.log(data[Object.keys(data)[0]])
+console.log(getdata())
 
 

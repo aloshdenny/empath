@@ -50,19 +50,7 @@ async function query(data) {
 	return result;
 }
 
-function updateTable(data) {
-    if (data) {
-        document.getElementById("field1").textContent = data.field1;
-        document.getElementById("field2").textContent = data.field2;
-        document.getElementById("field3").textContent = data.field3;
-    }
-}
 
-chrome.runtime.sendMessage({ action: "get_data" }, function (response) {
-    if (response.data) {
-        updateTable(response.data);
-    }
-});
 
 
 

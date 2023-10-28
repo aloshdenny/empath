@@ -46,3 +46,7 @@ Empath is a browser extension. So, to add this to your browser, follow these ste
 9. Go to any website of your choice. [Click here](https://www.onlinewordpad.com/) to go to a sample wordpad webpage to test it out.
 10. Type in a few complete sentences (ending in '.' or '?') and watch as the popup displays your recent most common emotions.
 
+## Working
+
+![popup](https://github.com/zayn0001 "Popup")
+

@@ -26,7 +26,9 @@ Summarization etc.
 Chart.js - Chart.js is a free and open-source JavaScript library for creating HTML5-based charts. It is relatively simple to use and provides a wide range of customization options. It supports a variety of chart types, including bar charts, line charts, pie charts, doughnut charts, bubble charts, area charts, radar charts, and mixed charts. 
 It also provides a number of plugins that can be used to add additional functionality to charts, such as annotations, zoom, and drag-and-drop. Chart.js is highly responsive and will automatically resize to fit its container. It is also compatible with all major browsers.
              
-                    
+## Future Scope
+
+We plan to integrate a fine-tuned version of the HuggingFace Audio2Vec speech model to transcribe speech to text. This is helpful at times when the user is unable/not in a situation to type out their journals. It's also a convenient option for commuters on the go; speech-to-text made much more easier
                 
 ## Installation
 

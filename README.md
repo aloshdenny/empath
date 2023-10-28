@@ -42,4 +42,4 @@ Empath is a browser extension. So, to add this to your browser, follow these ste
 6. The extension will be successfully added to your browser.
 7. Pin the extension to your browser toolbar.
 8. Click on the pinned extension to view your mood.
-7. Type in a few complete sentences (ending in '.' or '?') in any website of your choice and watch as the popup reflects your mood.    
+7. Type in a few complete sentences (ending in '.' or '?') in any website of your choice and watch as the popup reflects your mood.     

@@ -17,6 +17,52 @@ const app = initializeApp(firebaseConfig);
 const db  = getDatabase()
 const dbRef = ref(getDatabase());
 
+function sendtopopup(){
+    
+
+    get(child(dbRef, `data`)).then((snapshot) => {
+		if (snapshot.exists()) {
+            let data = snapshot.val()
+            const latest = 50
+            const objectKeys = Object.keys(data);
+            data = objectKeys.slice(-latest).reduce((result, key) => {
+            result[key] = data[key];
+            return result;
+            }, {});
+
+            console.log(data);
+
+            const allCategories = [];
+
+            for (const key in data) {
+              const category = data[key].mood;
+              allCategories.push(category);
+            }
+            const categoryCounts = allCategories.reduce((acc, category) => {
+                acc[category] = (acc[category] || 0) + 1;
+                return acc;
+              }, {});
+              
+              // Step 2: Convert the object into an array of objects for sorting
+              const categoryArray = Object.entries(categoryCounts).map(([category, count]) => ({
+                category,
+                count,
+              }));
+              
+              // Step 3: Sort the array based on the frequency in descending order
+              categoryArray.sort((a, b) => b.count - a.count);
+              
+              // Step 4: Get the top 3 categories
+              
+            const top3Categories = categoryArray.slice(0, 3);
+            console.log(top3Categories)
+
+            chrome.storage.local.set({ "top3": top3Categories }).then(() => {
+                console.log("Value is set");
+            });
+		}
+	})
+}
 
 
 function getdata(){
@@ -35,7 +81,7 @@ function adddata(timestamp, prompt, mood, score){
 		prompt: prompt,
 		mood: mood,
 		score: score,
-    cluster:""
+        cluster:""
 	});
     sendtopopup()   
 }
@@ -50,84 +96,6 @@ chrome.runtime.onMessage.addListener(
                 sendResponse({farewell: "goodbye"});
         }
       
-      console.log(sender.tab ?
-                  "from a content script:" + sender.tab.url :
-                  "from the extension");
-        
-        adddata(request.timestamp,request.prompt, request.mood, request.score)
-        senddatatopopup()
-      if (request.greeting === "hello")
-        sendResponse({farewell: "goodbye"});
     }
   );
 
-
-
-function senddatatopopup() {
-  latest = getdata()
-  console.log(latest)
-  chrome.runtime.sendMessage({timestamp: timestamp, prompt:prompt, mood:mood, score:score});
-}
-
-
-chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  if (request.action === "get_data") {
-      getdata().then((data) => {
-          sendResponse({ data: data });
-      });
-      return true; 
-  }
-});
-
-
-function updateTable(data) {
-  if (data) {
-      document.getElementById("field1").textContent = data[Object.keys(data)[0]];
-     }
-}
-console.log(data[Object.keys(data)[0]])
-console.log(getdata())
-
-
-
-
-// chart js
-
-    // Replace this with your actual mood data and chart configuration
-    const moodData = {
-      emoji: "😊",
-      text: "Happy"
-  };
-
-  // Current Mood
-  const currentMoodEmoji = document.getElementById("currentMoodEmoji");
-  const currentMoodText = document.getElementById("currentMoodText");
-  currentMoodEmoji.textContent = moodData.emoji;
-  currentMoodText.textContent = moodData.text;
-
-  // Mood Over the Past 6 Hours Chart
-  const moodChart = document.getElementById("moodChart").getContext("2d");
-  const chartData = {
-      labels: ["6 hours ago", "5 hours ago", "4 hours ago", "3 hours ago", "2 hours ago", "1 hour ago"],
-      datasets: [{
-          label: "Mood",
-          data: [5, 4, 3, 4, 5, 4], // Replace with actual mood data
-          backgroundColor: "rgba(75, 192, 192, 0.2)",
-          borderColor: "rgba(75, 192, 192, 1)",
-          borderWidth: 1
-      }]
-  };
-  const chartConfig = {
-      type: "line",
-      data: chartData,
-      options: {
-          scales: {
-              y: {
-                  beginAtZero: true,
-                  max: 5,
-                  stepSize: 1
-              }
-          }
-      }
-  };
-  new Chart(moodChart, chartConfig);

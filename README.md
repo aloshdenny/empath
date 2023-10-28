@@ -35,7 +35,6 @@ We plan to integrate a fine-tuned version of the HuggingFace Audio2Vec speech mo
 Empath is a browser extension. So, to add this to your browser, follow these steps;
 
 1. Clone the  repository.
-2. First, go to the repository of "Empath"
 3. Then, head on to the "Extensions Webstore" in your browser settings.
 4. Switch the "Developer mode" option on and click on the option saying "Load Unpacked".
 5. You will be directed to your file explorer. Select the 'exten' folder inside 'Empath'.

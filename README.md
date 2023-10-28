@@ -48,5 +48,5 @@ Empath is a browser extension. So, to add this to your browser, follow these ste
 
 ## Working
 
-![popup](https://github.com/zayn0001 "Popup")
+![popup](https://github.com/zayn0001/empath/popup.png "Popup")
 

@@ -49,4 +49,4 @@ Empath is a browser extension. So, to add this to your browser, follow these ste
 ## Working
 
 ![popup](https://github.com/zayn0001/empath/blob/main/tryout.png "Popup")
-The 3 emojis represent the latest common recent emotions, with the one in fromt being the most common.
+The 3 emojis represent the latest common recent emotions, with the one in front being the most common.

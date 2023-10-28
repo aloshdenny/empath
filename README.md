@@ -34,10 +34,12 @@ We plan to integrate a fine-tuned version of the HuggingFace Audio2Vec speech mo
 
 Empath is a browser extension. So, to add this to your browser, follow these steps;
 
-1. First, go to the repository of "Empath"
-2. Clone the "exten" repository.
+1. Clone the  repository.
+2. First, go to the repository of "Empath"
 3. Then, head on to the "Extensions Webstore" in your browser settings.
 4. Switch the "Developer mode" option on and click on the option saying "Load Unpacked".
-5. You will be directed to your file explorer to select the folder.
-6. Select the folder saying "exten". Then the extension will be added to your browser.
-    
+5. You will be directed to your file explorer. Select the 'exten' folder inside 'Empath'.
+6. The extension will be successfully added to your browser.
+7. Pin the extension to your browser toolbar.
+8. Click on the pinned extension to view your mood.
+7. Type in a few complete sentences (ending in '.' or '?') in any website of your choice and watch as the popup reflects your mood.    
